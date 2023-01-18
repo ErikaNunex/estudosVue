@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import botao from '@/views/botao.vue'
 import contador from '@/views/contador.vue'
+import tempo from '@/views/gerenciadorDeTempo.vue'
 
 Vue.use(VueRouter);
 const router = new VueRouter({
@@ -15,7 +16,13 @@ const router = new VueRouter({
       name:'contador',
       path:'/contador',
       component: contador
+    },
+    {
+      name:'tempo',
+      path:'/tempo',
+      component: tempo
     }
+
   ]
 })
 
