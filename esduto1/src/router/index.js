@@ -8,6 +8,7 @@ import lista from '@/views/lista.vue'
 
 Vue.use(VueRouter);
 const router = new VueRouter({
+  mode:'history',
   routes:[
     {
       name:'botao',
@@ -30,7 +31,8 @@ const router = new VueRouter({
       component: lista
     }
 
-  ]
+  ],
+  base:'/app',
 })
 
 export default router
