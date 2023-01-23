@@ -4,6 +4,7 @@ import botao from '@/views/botao.vue'
 import contador from '@/views/contador.vue'
 import tempo from '@/views/gerenciadorDeTempo.vue'
 import lista from '@/views/lista.vue'
+import login from '@/views/login.vue'
 
 
 Vue.use(VueRouter);
@@ -29,10 +30,15 @@ const router = new VueRouter({
       name:'lista',
       path:'/lista',
       component: lista
+    },
+    {
+      name:'login',
+      path:'/',
+      component: login
     }
 
   ],
-  base:'/app',
+  base:'',
 })
 
 export default router
