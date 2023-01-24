@@ -29,7 +29,8 @@ export default{
        sendLogin(){
        store.dispatch('login',this.modelLogin)
        }
-    }
+    },
+
     
 }
 

@@ -5,6 +5,7 @@ import contador from '@/views/contador.vue'
 import tempo from '@/views/gerenciadorDeTempo.vue'
 import lista from '@/views/lista.vue'
 import login from '@/views/login.vue'
+import store from "../store/index.js"
 
 
 Vue.use(VueRouter);
@@ -29,8 +30,8 @@ const router = new VueRouter({
     {
       name:'lista',
       path:'/lista',
-      component: lista
-    },
+      component: lista,
+  },
     {
       name:'login',
       path:'/',
@@ -40,5 +41,17 @@ const router = new VueRouter({
   ],
   base:'',
 })
+
+router.beforeEach((to,from,next)=>{
+    if(to.name !== 'login' &&  !store.state.isLogged){
+      next({name:'login'});
+      console.log('if')
+    }else{
+      console.log('else')
+      next();
+  }
+})
+
+
 
 export default router

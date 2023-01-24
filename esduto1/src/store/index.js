@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from 'vuex';
+import router from '@/router';
 
 
 Vue.use(Vuex)
@@ -9,20 +10,19 @@ const store = new Vuex.Store({
         usuarios:
             {
               usuario:'Admin',
-              senha:'Admin123456'
+              senha:'123456'
             },
-        isLogged:{
-          //  !!localStorage.getItem("user")
-        }
+        isLogged:!!localStorage.getItem('usuarios')
+
     },
     actions:{
-        login( modelLogin){
-            console.log(this.state.usuarios)
-            debugger;
-            if(modelLogin.usuario === this.state.usuarios.usuario && modelLogin.senha === this.state.usuarios.senha){
+        login( {state}, modelLogin){
+            if(modelLogin.usuario == state.usuarios.usuario && modelLogin.senha == state.usuarios.senha){
                 localStorage.setItem('usuarios', modelLogin );
+                router.push('/lista')
+            
             } else{
-                console.log('aqui')
+                console.log(modelLogin)
                 alert('usuario não existe')
             }
         },
@@ -31,6 +31,7 @@ const store = new Vuex.Store({
                 localStorage.removeItem('usuarios');
             }
         }
+
     }
 })
 
