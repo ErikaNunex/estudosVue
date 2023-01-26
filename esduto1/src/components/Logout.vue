@@ -1,0 +1,26 @@
+<template>
+    <v-main>
+        <v-btn
+        @click="getOut()"
+        >Sair</v-btn>
+    </v-main>
+</template>
+<script>
+import { mapActions } from 'vuex';
+import store from "../store/index.js";
+import router from '@/router';
+
+export default{
+    name:'logoutVue',
+    methods:{
+        ...mapActions[('logout')],
+
+        getOut(){
+            store.dispatch('logout')
+            router.push('/')
+        }
+    }
+}
+</script>
+<style>
+</style>

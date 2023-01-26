@@ -1,15 +1,21 @@
 <template>
-    <div >
+  <div  >
+      <v-container>
+      <h1>listagem de caminhoneiros</h1>
         <lista-de-caminhoneiros :caminhoneiros="caminhoneiros"/>
+      </v-container>
     </div>
   </template>
   
   <script>
-import ListaDeCaminhoneiros from '@/components/ListaDeCaminhoneiros.vue'
+import ListaDeCaminhoneiros from '@/components/ListaDeCaminhoneiros.vue';
+
+
  export default{
     name:'ComponenteLista',
     components:{
-        ListaDeCaminhoneiros
+        ListaDeCaminhoneiros,
+        
     },
     data(){
     return{

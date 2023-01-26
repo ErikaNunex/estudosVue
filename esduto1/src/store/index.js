@@ -12,7 +12,7 @@ const store = new Vuex.Store({
               usuario:'Admin',
               senha:'123456'
             },
-        isLogged:!!localStorage.getItem('usuarios')
+        isLogged:!!localStorage.getItem('usuarios'),
 
     },
     actions:{
@@ -22,7 +22,6 @@ const store = new Vuex.Store({
                 router.push('/lista')
             
             } else{
-                console.log(modelLogin)
                 alert('usuario não existe')
             }
         },
@@ -32,6 +31,11 @@ const store = new Vuex.Store({
             }
         }
 
+    },
+    mutations:{
+        setLogged({state}){
+            state.isLogged == !state.isLogged
+        }
     }
 })
 
