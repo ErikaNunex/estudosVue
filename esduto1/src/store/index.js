@@ -1,42 +1,49 @@
 import Vue from "vue";
-import Vuex from 'vuex';
-import router from '@/router';
+import Vuex from "vuex";
+import router from "@/router";
 
-
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
-    state:{
-        usuarios:
-            {
-              usuario:'Admin',
-              senha:'123456'
-            },
-        isLogged:!!localStorage.getItem('usuarios'),
-
+  state: {
+    usuarios: {
+      usuario: "Admin",
+      senha: "123456",
     },
-    actions:{
-        login( {state}, modelLogin){
-            if(modelLogin.usuario == state.usuarios.usuario && modelLogin.senha == state.usuarios.senha){
-                localStorage.setItem('usuarios', modelLogin );
-                router.push('/lista')
-            
-            } else{
-                alert('usuario não existe')
-            }
-        },
-        logout(){
-            if(localStorage.getItem('usuarios')){
-                localStorage.removeItem('usuarios');
-            }
-        }
-
+    isLogged: false,
+  },
+  actions: {
+    login({ state, commit }, modelLogin) {
+      if (
+        modelLogin.usuario == state.usuarios.usuario &&
+        modelLogin.senha == state.usuarios.senha
+      ) {
+        localStorage.setItem("usuarios", modelLogin);
+        commit("setLogin", true);
+        router.push("/lista");
+      } else {
+        alert("usuario não existe");
+      }
     },
-    mutations:{
-        setLogged({state}){
-            state.isLogged == !state.isLogged
-        }
-    }
-})
+    logout({ commit }) {
+      localStorage.removeItem("usuarios");
+      commit("setLogout", false);
+      router.push("/");
+    },
+  },
+  getters: {
+    getLogin(state) {
+      return state.isLogged;
+    },
+  },
+  mutations: {
+    setLogin(state, response) {
+      state.isLogged = response;
+    },
+    setLogout(state, response) {
+      state.isLogged = response;
+    },
+  },
+});
 
-export default  store ;
+export default store;

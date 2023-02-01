@@ -1,52 +1,42 @@
 <template>
-    <div>
-        <v-container>
-            <v-col md="11">
-                <v-text-field 
-                v-model="modelLogin.usuario" 
-                label="Usuario" 
-                required>
-                </v-text-field>
-            </v-col>
+  <div>
+    <v-container>
+      <v-row>
+        <v-col>
+          <v-col>
+            <v-text-field v-model="modelLogin.usuario" label="Usuario">
+            </v-text-field>
+          </v-col>
 
-            <v-col md="11">
-                <v-text-field 
-                v-model="modelLogin.senha" 
-                label="Senha" required>
-                </v-text-field>
-            </v-col>
-            <v-col>
-                <v-btn
-                color="#90CAF9"
-                @click='sendLogin()'  
-                elevation="7" 
-                x-large>Entrar</v-btn>
-            </v-col>
-
-        </v-container>
-    </div>
+          <v-col>
+            <v-text-field v-model="modelLogin.senha" label="Senha">
+            </v-text-field>
+          </v-col>
+          <v-col>
+            <v-btn color="#90CAF9" @click="sendLogin()" elevation="7"
+              >Entrar</v-btn
+            >
+          </v-col>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template> 
 <script>
-import { mapActions, mapMutations} from 'vuex';
+import { mapActions } from "vuex";
 export default {
-    name: 'FormLogin',
-    data: () => ({
-        modelLogin: {
-            usuario: '',
-            senha: ''
-        },
-    }),
-    methods: {
-        ...mapActions(['login']),
-        ...mapMutations(['setLogged']),
-        sendLogin() {
-            this.$store.dispatch('login', this.modelLogin)  
-
-        },
-
+  name: "FormLogin",
+  data: () => ({
+    modelLogin: {
+      usuario: "",
+      senha: "",
     },
-
-
-}
-
+  }),
+  methods: {
+    ...mapActions(["login"]),
+    sendLogin() {
+      this.$store.dispatch("login", this.modelLogin);
+    },
+  },
+};
 </script>

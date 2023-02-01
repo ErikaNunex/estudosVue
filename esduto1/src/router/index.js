@@ -6,6 +6,7 @@ import tempo from '@/views/gerenciadorDeTempo.vue'
 import lista from '@/views/lista.vue'
 import login from '@/views/login.vue'
 import store from "../store/index.js"
+import dashboard from "@/views/dashboard.vue"
 
 
 Vue.use(VueRouter);
@@ -36,6 +37,11 @@ const router = new VueRouter({
       name:'login',
       path:'/',
       component: login
+    },
+    {
+      name:'dashboard',
+      path: '/darshboard',
+      component:dashboard
     }
 
   ],
@@ -44,10 +50,9 @@ const router = new VueRouter({
 
 router.beforeEach((to,from,next)=>{
     if(to.name !== 'login' &&  !store.state.isLogged){
-      next({name:'login'});
-      console.log('if')
+      next(from.name === 'login');
+      
     }else{
-      console.log('else')
       next();
   }
 })

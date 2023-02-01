@@ -8,7 +8,7 @@
 <script>
 import { mapActions } from 'vuex';
 import store from "../store/index.js";
-import router from '@/router';
+
 
 export default{
     name:'logoutVue',
@@ -17,7 +17,7 @@ export default{
 
         getOut(){
             store.dispatch('logout')
-            router.push('/')
+            
         }
     }
 }
