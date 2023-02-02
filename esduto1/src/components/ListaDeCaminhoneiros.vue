@@ -21,7 +21,7 @@
   </div>
     <v-row  class="justify-space-around purple lighten-5 ">
       <v-col class="border-right"  align="center">
-          <div class="text-truncate"  v-for="caminhoneiro in caminhoneiros" :key="caminhoneiro.nome" >
+          <div  class="d-flex justify-space-around mb-6"  v-for="caminhoneiro in caminhoneiros" :key="caminhoneiro.nome" >
             <span align="start" sm="1" class="d-md-none d-lg-none d-xl-none d-block">
             <b>Nome:</b>
           </span>
@@ -29,7 +29,7 @@
           </div>
         </v-col>
         <v-col class="border-right"  align="center">
-          <div class="text-truncate"  v-for="caminhoneiro in caminhoneiros" :key="caminhoneiro.idade" >
+          <div  class="d-flex justify-space-around mb-6" v-for="caminhoneiro in caminhoneiros" :key="caminhoneiro.idade" >
             <span align="start" sm="1" class="d-md-none d-lg-none d-xl-none d-block">
             <b>Idade:</b>
           </span>
@@ -37,7 +37,7 @@
           </div>
         </v-col>
          <v-col  align="center">
-          <div class="text-truncate"  v-for="caminhoneiro in caminhoneiros" :key="caminhoneiro.email" >
+          <div class="d-flex justify-space-around mb-6"  v-for="caminhoneiro in caminhoneiros" :key="caminhoneiro.email" >
             <span align="start" sm="1" class="d-md-none d-lg-none d-xl-none d-block">
             <b>Email:</b>
           </span>
