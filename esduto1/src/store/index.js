@@ -1,8 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import router from "@/router";
-
+import VuexPersistence from "vuex-persist";
 Vue.use(Vuex);
+
+const vuexLocal = new VuexPersistence({
+  storage: window.localStorage
+})
 
 const store = new Vuex.Store({
   state: {
@@ -11,6 +15,7 @@ const store = new Vuex.Store({
       senha: "123456",
     },
     isLogged: false,
+    
   },
   actions: {
     login({ state, commit }, modelLogin) {
@@ -44,6 +49,7 @@ const store = new Vuex.Store({
       state.isLogged = response;
     },
   },
+  plugins : [ vuexLocal.plugin ]
 });
 
 export default store;
