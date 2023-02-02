@@ -1,10 +1,14 @@
 <template>
-  <div  >
+  
       <v-container>
-      <h1>listagem de caminhoneiros</h1>
+    <v-row >
+      <v-col align="center" >
+        <h1 class="mb-10">Lista de caminhoneiros</h1>
         <lista-de-caminhoneiros :caminhoneiros="caminhoneiros"/>
+      </v-col>
+    </v-row>
       </v-container>
-    </div>
+   
   </template>
   
   <script>
@@ -22,15 +26,18 @@ import ListaDeCaminhoneiros from '@/components/ListaDeCaminhoneiros.vue';
       caminhoneiros:[
         {
           nome:'Jorge',
-          idade:'31'
+          idade:'31',
+          email:'jorge@email.com'
         },
         {
           nome:'Helena',
-          idade:'42'
+          idade:'42',
+          email:'helena@email.com'
         },
         {
           nome:'Marcos',
-          idade:'50'
+          idade:'50',
+          email:'marcos@email.com'
         }
       ]
     }

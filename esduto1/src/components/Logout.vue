@@ -1,5 +1,5 @@
 <template>
-    <v-main>
+    <v-main align="end">
         <v-btn
         @click="getOut()"
         >Sair</v-btn>

@@ -1,6 +1,6 @@
 <template>
   <v-app id="app">
-    <v-container height="100%">
+    <v-container >
       <Logout v-if="getLogin" />
       <v-main>
         <router-view></router-view>
