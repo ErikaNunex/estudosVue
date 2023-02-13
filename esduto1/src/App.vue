@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
-    <v-container >
-      <Logout v-if="getLogin" />
+    <v-container>
+      <NavBar v-if="getLogin" />
       <v-main>
         <router-view></router-view>
       </v-main>
@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import Logout from "./components/Logout.vue";
+import NavBar from "./components/NavBar.vue";
 import { mapGetters } from "vuex";
 export default {
   name: "App",
   components: {
-    Logout,
+    NavBar,
   },
   computed: {
     ...mapGetters(["getLogin"]),
@@ -23,5 +23,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
