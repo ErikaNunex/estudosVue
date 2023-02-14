@@ -6,8 +6,8 @@
         <div class="life-bar">
           <div
             class="life"
-            :class="{ danger: playerLife < 20 }"
-            :style="{ width: playerLife + '%' }"
+            :class="{ danger: player_life < 20 }"
+            :style="{ width: player_life + '%' }"
           ></div>
         </div>
         {{ playerLife }}%
@@ -18,8 +18,8 @@
         <div class="life-bar">
           <div
             class="life"
-            :class="{ danger: monsterLife < 20 }"
-            :style="{ width: monsterLife + '%' }"
+            :class="{ danger: monster_life < 20 }"
+            :style="{ width: monster_life + '%' }"
           ></div>
         </div>
         {{ monsterLife }}%
@@ -30,12 +30,7 @@
 <script>
 export default {
   name: "ScoreJogo",
-  data() {
-    return {
-      playerLife: 100,
-      monsterLife: 100,
-    };
-  },
+  props: ["player_life", "monster_life"],
   computed: {},
   methods: {},
   watch: {},

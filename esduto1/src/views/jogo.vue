@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Scores />
+    <Scores :player_life="playerLife" :monster_life="monsterLife" />
   </div>
 </template>
 <script>
@@ -9,6 +9,12 @@ export default {
   name: "JogoVue",
   components: {
     Scores,
+  },
+  data() {
+    return {
+      playerLife: 100,
+      monsterLife: 100,
+    };
   },
 };
 </script>
