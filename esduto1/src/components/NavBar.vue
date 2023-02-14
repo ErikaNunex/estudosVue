@@ -1,7 +1,7 @@
 <template>
   <v-main align="end">
     <v-row>
-      <v-col>
+      <v-col class="d-flex justify-space-around">
         <a>Lista</a>
         <a @click="$emit(redirecionar())">contador</a>
       </v-col>

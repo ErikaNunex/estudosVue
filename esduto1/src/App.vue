@@ -2,10 +2,10 @@
   <v-app id="app">
     <v-container>
       <NavBar v-if="getLogin" />
-      <v-main>
-        <router-view></router-view>
-      </v-main>
     </v-container>
+    <v-main>
+      <router-view></router-view>
+    </v-main>
   </v-app>
 </template>
 

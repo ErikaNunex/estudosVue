@@ -5,6 +5,8 @@ import lista from '@/views/lista.vue'
 import login from '@/views/login.vue'
 import store from "../store/index.js"
 import dashboard from "@/views/dashboard.vue"
+import playground from "@/views/playground.vue"
+import jogo from '@/views/jogo.vue'
 
 
 Vue.use(VueRouter);
@@ -30,6 +32,16 @@ const router = new VueRouter({
       name:'dashboard',
       path: '/darshboard',
       component:dashboard
+    },
+    {
+      name: 'playground',
+      path: '/playground',
+      component: playground
+    },
+    {
+      name: 'jogo',
+      path: '/jogo',
+      component: jogo
     }
 
   ],
@@ -37,7 +49,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to,from,next)=>{
-    if(to.name !== 'login' &&  store.state.isLogged=== false){
+    if(to.name !== 'login' &&  store.state.isLogged === false){
       next('/');
       
     }else{
