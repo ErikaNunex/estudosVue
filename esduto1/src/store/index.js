@@ -33,7 +33,7 @@ const store = new Vuex.Store({
     logout({ commit }) {
       localStorage.removeItem("usuarios");
       commit("setLogout", false);
-      router.push("/");
+      window.location.reload();
     },
   },
   getters: {

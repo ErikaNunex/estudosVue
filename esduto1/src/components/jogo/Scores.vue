@@ -10,7 +10,7 @@
             :style="{ width: player_life + '%' }"
           ></div>
         </div>
-        {{ playerLife }}%
+        {{ player_life }}%
       </v-col>
 
       <v-col>
@@ -22,7 +22,7 @@
             :style="{ width: monster_life + '%' }"
           ></div>
         </div>
-        {{ monsterLife }}%
+        {{ monster_life }}%
       </v-col>
     </v-row>
   </div>
