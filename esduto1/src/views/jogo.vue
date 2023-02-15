@@ -10,16 +10,23 @@
         <Result :player_life="playerLife" :monster_life="monsterLife" />
       </v-col>
     </v-row>
+    <v-row>
+      <v-col>
+        <Buttons :player_life="playerLife" :monster_life="monsterLife" />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 <script>
 import Scores from "@/components/jogo/Scores.vue";
 import Result from "@/components/jogo/Result.vue";
+import Buttons from "@/components/jogo/Buttons.vue";
 export default {
   name: "JogoVue",
   components: {
     Scores,
     Result,
+    Buttons,
   },
   data() {
     return {
