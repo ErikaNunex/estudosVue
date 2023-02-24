@@ -43,7 +43,7 @@ export default {
   components: {},
   computed: {
     resultado() {
-      return this.contador != 37 ? "Valor diferente de 37" : "valor igual a 37";
+      return this.contador != 10 ? "Valor diferente de 10" : "valor igual a 10";
     },
   },
   methods: {
